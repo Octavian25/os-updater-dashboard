@@ -16,7 +16,7 @@ import Navbar from "./pages/Navbar";
 function App() {
   return (
     <AuthProvider>
-      <Router basename="/dashboard-nagatech-deploy-track">
+      <Router basename="/os-updater-dashboard">
         <Navbar />
         <Routes>
           <Route path="/login" element={<Login />} />

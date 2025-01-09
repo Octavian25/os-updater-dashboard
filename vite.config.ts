@@ -5,7 +5,7 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/dashboard-nagatech-deploy-track/",
+  base: "/os-updater-dashboard/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
