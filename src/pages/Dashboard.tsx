@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/card";
 import { CreateVersionModal } from "./CreateVersionModal";
 import { EditVersionModal } from "./EditVersionModal";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface Version {
   _id: string;
@@ -30,6 +32,7 @@ interface Version {
 const Dashboard = () => {
   const [versions, setVersions] = useState<Version[]>([]);
   const { token } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchVersions();
@@ -102,6 +105,16 @@ const Dashboard = () => {
                       token={token}
                       onVersionUpdated={fetchVersions}
                     />
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="ml-2"
+                      onClick={() => {
+                        navigate(`/analytics?appName=${version.appName}`);
+                      }}
+                    >
+                      Detail
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}

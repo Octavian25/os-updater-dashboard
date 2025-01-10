@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import UserManagement from "./pages/UserManagement";
 import PrivateRoute from "./pages/PrivateRoute";
 import Navbar from "./pages/Navbar";
+import AnalyticsPage from "./pages/DetailEnroll";
 
 function App() {
   return (
@@ -21,6 +22,14 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route
+            path="/analytics"
+            element={
+              <PrivateRoute>
+                <AnalyticsPage />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="/dashboard"
             element={
